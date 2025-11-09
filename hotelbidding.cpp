@@ -101,7 +101,7 @@ public:
             cout << "No Standard rooms left. Bid rejected for "
                  << request.customerName << ".\n";
         } else {
-            cout << "Bid too low for Standard. Rejected for "
+            cout << "Bid too low for Standard. Bid is rejected for "
                  << request.customerName << " ($" << request.amount << ")\n";
         }
     }
@@ -121,9 +121,9 @@ int main() {
 
     cout << "HOTEL ROOM BIDDING SYSTEM" << endl;
     cout << "Room Availability: " << endl;
-    cout << "  Suite:   10 " << endl;
-    cout << "  Deluxe:  15" << endl;
-    cout << "  Standard:45" << endl;
+    cout << "  Suite: 10 " << endl;
+    cout << "  Deluxe: 15" << endl;
+    cout << "  Standard: 45" << endl;
 
     while (true) {
         string name;
@@ -152,9 +152,10 @@ int main() {
         suite.handleRequest(request);
         cout << "-------------------------------------------" << endl;
 
-        cout << "Current Availability -> Suites: " << suite.getRoomsAvailable()
-             << ", Deluxe: " << deluxe.getRoomsAvailable()
-             << ", Standard: " << standard.getRoomsAvailable() << "\n" << endl;
+        cout << "CURRENT AVAILABILITY" << endl; 
+        cout << "Suites: " << suite.getRoomsAvailable() << endl;
+        cout << "Deluxe: " << deluxe.getRoomsAvailable() << endl;
+        cout << "Standard: " << standard.getRoomsAvailable() << endl;
 
         // Stops if rooms are sold out
         if (suite.getRoomsAvailable() == 0 && deluxe.getRoomsAvailable() == 0 && standard.getRoomsAvailable() == 0) {
